@@ -4,8 +4,6 @@ public class Account {
     String accountName;
     String phone;
     String website;
-    String parentAccount;
-    String description;
     String employees;
     String billingStreet;
     String shippingStreet;
@@ -18,15 +16,13 @@ public class Account {
     String shippingZip;
     String shippingCountry;
 
-    public Account(String accountName, String phone, String website, String parentAccount, String description, String employees,
+    public Account(String accountName, String phone, String website, String employees,
                    String billingStreet, String shippingStreet, String billingCity, String billingStateProvince,
                    String shippingCity, String shippingStateProvince, String billingZip, String billingCountry,
                    String shippingZip, String shippingCountry) {
         this.accountName = accountName;
         this.phone = phone;
         this.website = website;
-        this.parentAccount = parentAccount;
-        this.description = description;
         this.employees = employees;
         this.billingStreet = billingStreet;
         this.shippingStreet = shippingStreet;
@@ -65,21 +61,6 @@ public class Account {
         this.website = website;
     }
 
-    public String getParentAccount() {
-        return parentAccount;
-    }
-
-    public void setParentAccount(String parentAccount) {
-        this.parentAccount = parentAccount;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getEmployees() {
         return employees;
