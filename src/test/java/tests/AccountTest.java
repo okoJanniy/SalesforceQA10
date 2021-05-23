@@ -2,7 +2,6 @@ package tests;
 
 import models.Account;
 import org.testng.annotations.Test;
-import pages.AccountListPage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -22,9 +21,10 @@ public class AccountTest extends BaseTest {
         //FACTORY
         //BUILDER
         //RANDOM DATA
-        Account account = new Account("Anton", "+372443652244", "website.by", "20",
+        Account account = new Account("Anton", "website.by", "375223452653", "none", "20",
                 "Knorina", "Knorina", "Minsk", "Belarus", "Minsk",
-                "Belarus", "23456", "Belarus", "5672635", "Belarus");
+                "Belarus", "123456", "Belarus", "654321", "Belarus");
+
         accountListPage
                 .open()
                 .clickNew()

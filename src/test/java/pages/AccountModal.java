@@ -2,9 +2,12 @@ package pages;
 
 import elements.DropDown;
 import elements.Input;
+import elements.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+
 
 public class AccountModal extends BasePage {
     public static final By MODAL_TITLE = By.xpath("//h2[text()='New Account']");
@@ -24,14 +27,17 @@ public class AccountModal extends BasePage {
         new DropDown(driver, "Type").select("Analyst");
         new Input(driver, "Website").write(account.getWebsite());
         new Input(driver, "Phone").write(account.getPhone());
+        new TextArea(driver,"Description").write(account.getDescription());
         new DropDown(driver, "Industry").select("Banking");
         new Input(driver, "Employees").write(account.getEmployees());
+        new TextArea(driver, "Billing Street").write(account.getBillingStreet());
         new Input(driver, "Billing City").write(account.getBillingCity());
         new Input(driver, "Billing State/Province").write(account.getBillingStateProvince());
-        new Input(driver, "Shipping City").write(account.getShippingCity());
-        new Input(driver, "Shipping State/Province").write(account.getShippingStateProvince());
         new Input(driver, "Billing Zip/Postal Code").write(account.getBillingZip());
         new Input(driver, "Billing Country").write(account.getBillingCountry());
+        new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
+        new Input(driver, "Shipping City").write(account.getShippingCity());
+        new Input(driver, "Shipping State/Province").write(account.getShippingStateProvince());
         new Input(driver, "Shipping Zip/Postal Code").write(account.getShippingZip());
         new Input(driver, "Shipping Country").write(account.getShippingCountry());
         save();
