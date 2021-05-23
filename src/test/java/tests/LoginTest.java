@@ -1,12 +1,13 @@
 package tests;
 
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(description = "User logging")
     public void login() {
         boolean isOpened = loginPage
                 .open()
