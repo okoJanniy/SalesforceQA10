@@ -2,14 +2,14 @@ package tests;
 
 import models.Account;
 import org.testng.annotations.Test;
-import pages.AccountListPage;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
 public class AccountTest extends BaseTest {
 
 
-    @Test
+    @Test(description = "Account should be created")
     public void accountShouldBeCreated() {
         boolean isOpened = loginPage
                 .open()
@@ -22,10 +22,11 @@ public class AccountTest extends BaseTest {
         //FACTORY
         //BUILDER
         //RANDOM DATA
-        Account account = new Account("Anton", "+375292342153", "website.by", "salesforce.com",
-                "none", "20", "Knorina", "Knorina", "Minsk", "Belarus",
-                "Minsk", "Belarus", "232123", "Minsk", "456653", "Minsk");
-        accountsListPage
+        Account account = new Account("Anton", "website.by", "375223452653", "none", "20",
+                "Knorina", "Knorina", "Minsk", "Belarus", "Minsk",
+                "Belarus", "123456", "Belarus", "654321", "Belarus");
+
+        accountListPage
                 .open()
                 .clickNew()
                 .create(account)

@@ -23,21 +23,16 @@ public class AccountDetailsPage extends BasePage {
 
     public void validateAccount(Account account) {
         validateInput("Account Name", account.getAccountName());
-        validateInput("Phone", account.getPhone());
-        validateInput("Website", account.getWebsite());
-        validateInput("Parent Account", account.getParentAccount());
-        validateInput("Description", account.getDescription());
-        validateInput("Employees", account.getEmployees());
-        validateInput("Billing Street", account.getBillingStreet());
-        validateInput("Shipping Street", account.getShippingStreet());
-        validateInput("Billing City", account.getBillingCity());
-        validateInput("Billing State/Province", account.getBillingStateProvince());
-        validateInput("Billing Zip", account.getBillingZip());
-        validateInput("Billing Country ", account.getBillingCountry());
-        validateInput("Shipping Zip", account.getShippingZip());
-        validateInput("Shipping Country", account.getShippingCountry());
         validateInput("Type", "Analyst");
+        validateAHref("Website", account.getWebsite());
+        validateAHref("Phone", account.getPhone());
+        validateInput("Description", account.getDescription());
         validateInput("Industry", "Banking");
+        validateNumber("Employees", account.getEmployees());
+        validateAddress("Billing Address", new String[]{account.getBillingStreet(), account.getBillingCity(),
+                account.getBillingStateProvince(), account.getBillingZip(), account.getBillingCountry()});
+        validateAddress("Shipping Address", new String[]{account.getShippingStreet(), account.getShippingCity(),
+                account.getShippingStateProvince(), account.getShippingZip(), account.getShippingCountry()});
 
     }
 }

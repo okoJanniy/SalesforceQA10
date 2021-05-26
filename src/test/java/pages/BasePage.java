@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public abstract class BasePage {
-    public static final String BASE_URL = "https://erip.my.salesforce.com/";
+    public static final String BASE_URL = "https://vxxv2.lightning.force.com/";
     WebDriver driver;
     WebDriverWait wait;
 
