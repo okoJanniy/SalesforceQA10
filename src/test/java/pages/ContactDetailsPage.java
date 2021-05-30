@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,12 +16,12 @@ public class ContactDetailsPage extends BasePage {
     public boolean isPageOpened() {
         return false;
     }
-
+    @Step("Open details tab")
     public ContactDetailsPage openDetailsTab() {
         driver.findElement(DETAILS_TAB).click();
         return this;
     }
-
+    @Step("validate contact")
     public void validateContact(Contact contact) {
         validateInput("Title", contact.getTitle());
         validateInput("Email", contact.getEmail());

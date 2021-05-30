@@ -13,7 +13,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
+    @Step("Opening login page")
     public boolean isPageOpened() {
         return isExist(LOGIN_BUTTON);
     }
@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
         driver.get(BASE_URL);
         return this;
     }
-
+    @Step("Login by User: {user}")
     public HomePage login(String user, String password) {
         driver.findElement(LOGIN_INPUT).sendKeys(user);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);

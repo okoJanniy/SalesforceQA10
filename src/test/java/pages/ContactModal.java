@@ -1,6 +1,7 @@
 package pages;
 
 import elements.contactPage.Search;
+import io.qameta.allure.Step;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ public class ContactModal extends BasePage {
     public boolean isPageOpened() {
         return isExist(MODAL_TITLE);
     }
-
+    @Step("Create new contact")
     public ContactDetailsPage create(Contact contact) {
         new elements.contactPage.DropDown(driver, "Salutation").select("Mr.");
         new elements.contactPage.Input(driver, "First Name").write(contact.getFirstName());
