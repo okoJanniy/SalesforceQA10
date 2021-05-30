@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.AccountListPage;
+import pages.ContactListPage;
 import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -17,6 +18,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected AccountListPage accountListPage;
+    protected ContactListPage contactListPage;
 
     @BeforeMethod
     public void setUp() {
@@ -29,6 +31,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         accountListPage = new AccountListPage(driver);
+        contactListPage = new ContactListPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

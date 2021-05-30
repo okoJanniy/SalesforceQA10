@@ -5,35 +5,31 @@ public class Contact {
     String middleName;
     String lastName;
     String suffix;
-    String accountName;
     String title;
     String email;
     String phone;
     String mobile;
     String department;
     String fax;
-    String mailingStreet;
     String mailingCity;
     String mailingZipCode;
     String mailingState;
     String mailingCountry;
 
-    public Contact(String firstName, String middleName, String lastName, String suffix, String accountName,
-                   String title, String email, String phone, String mobile, String department, String fax,
-                   String mailingStreet, String mailingCity, String mailingZipCode, String mailingState,
+    public Contact(String firstName, String middleName, String lastName, String suffix, String title, String email,
+                   String phone, String mobile, String department, String fax,
+                   String mailingCity, String mailingZipCode, String mailingState,
                    String mailingCountry) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.suffix = suffix;
-        this.accountName = accountName;
         this.title = title;
         this.email = email;
         this.phone = phone;
         this.mobile = mobile;
         this.department = department;
         this.fax = fax;
-        this.mailingStreet = mailingStreet;
         this.mailingCity = mailingCity;
         this.mailingZipCode = mailingZipCode;
         this.mailingState = mailingState;
@@ -70,14 +66,6 @@ public class Contact {
 
     public void setSuffix(String suffix) {
         this.suffix = suffix;
-    }
-
-    public String getAccountName() {
-        return accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
     }
 
     public String getTitle() {
@@ -126,14 +114,6 @@ public class Contact {
 
     public void setFax(String fax) {
         this.fax = fax;
-    }
-
-    public String getMailingStreet() {
-        return mailingStreet;
-    }
-
-    public void setMailingStreet(String mailingStreet) {
-        this.mailingStreet = mailingStreet;
     }
 
     public String getMailingCity() {

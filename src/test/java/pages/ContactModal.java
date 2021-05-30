@@ -1,8 +1,6 @@
 package pages;
 
-import elements.accountPage.DropDown;
-import elements.accountPage.Input;
-import elements.contactPage.TextArea;
+import elements.contactPage.Search;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,23 +19,23 @@ public class ContactModal extends BasePage {
     }
 
     public ContactDetailsPage create(Contact contact) {
-        new DropDown(driver, "Salutation").select("Mr.");
-        new Input(driver, "First Name").write(contact.getFirstName());
-        new Input(driver, "Middle Name").write(contact.getMiddleName());
-        new Input(driver, "Last Name").write(contact.getLastName());
-        new Input(driver, "Suffix").write(contact.getSuffix());
-        new DropDown(driver, "Account Name").select("TestTest");
-        new Input(driver, "Title").write(contact.getTitle());
-        new Input(driver, "Email").write(contact.getEmail());
-        new Input(driver, "Phone").write(contact.getPhone());
-        new Input(driver, "Mobile").write(contact.getMobile());
-        new Input(driver, "Department").write(contact.getDepartment());
-        new Input(driver, "Fax").write(contact.getFax());
-        new Input(driver, "Mailing City").write(contact.getMailingCity());
-        new TextArea(driver, "Mailing Street").write(contact.getMailingStreet());
-        new Input(driver, "Mailing State/Province").write(contact.getMailingState());
-        new Input(driver, "Mailing Country").write(contact.getMailingCountry());
-        new Input(driver, "Mailing Zip/Postal Code").write(contact.getMailingZipCode());
+        new elements.contactPage.DropDown(driver, "Salutation").select("Mr.");
+        new elements.contactPage.Input(driver, "First Name").write(contact.getFirstName());
+        new elements.contactPage.Input(driver, "Middle Name").write(contact.getMiddleName());
+        new elements.contactPage.Input(driver, "Last Name").write(contact.getLastName());
+        new elements.contactPage.Input(driver, "Suffix").write(contact.getSuffix());
+        new Search(driver, "Account Name").select("Anton");
+        new elements.contactPage.Input(driver, "Title").write(contact.getTitle());
+        new elements.contactPage.Input(driver, "Email").write(contact.getEmail());
+        new elements.contactPage.Input(driver, "Phone").write(contact.getPhone());
+        new elements.contactPage.Input(driver, "Mobile").write(contact.getMobile());
+        new elements.contactPage.Input(driver, "Department").write(contact.getDepartment());
+        new elements.contactPage.Input(driver, "Fax").write(contact.getFax());
+        new Search(driver, "Mailing Address").select("Belarus");
+        new elements.contactPage.Input(driver, "Mailing City").write(contact.getMailingCity());
+        new elements.contactPage.Input(driver, "Mailing State/Province").write(contact.getMailingState());
+        new elements.contactPage.Input(driver, "Mailing Country").write(contact.getMailingCountry());
+        new elements.accountPage.Input(driver, "Mailing Zip/Postal Code").write(contact.getMailingZipCode());
         save();
         return new ContactDetailsPage(driver);
     }
