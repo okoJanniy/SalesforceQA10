@@ -1,4 +1,4 @@
-package elements;
+package elements.accountPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

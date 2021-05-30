@@ -1,8 +1,9 @@
 package pages;
 
-import elements.DropDown;
-import elements.Input;
-import elements.TextArea;
+import elements.accountPage.DropDown;
+import elements.accountPage.Input;
+import elements.accountPage.TextArea;
+import io.qameta.allure.Step;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,7 @@ public class AccountModal extends BasePage {
     }
 
     //ATLAS //JDI
+    @Step("Create new account")
     public AccountDetailsPage create(Account account) {
         new Input(driver, "Account Name").write(account.getAccountName());
         new DropDown(driver, "Type").select("Analyst");

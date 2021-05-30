@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,12 +16,12 @@ public class AccountDetailsPage extends BasePage {
     public boolean isPageOpened() {
         return false;
     }
-
+    @Step("Open details tab")
     public AccountDetailsPage openDetailsTab() {
         driver.findElement(DETAILS_TAB).click();
         return this;
     }
-
+    @Step("Validate account")
     public void validateAccount(Account account) {
         validateInput("Account Name", account.getAccountName());
         validateInput("Type", "Analyst");
